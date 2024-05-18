@@ -18,9 +18,9 @@ def organize_files(directory):
 
     # Create subdirectories if they don't exist
     for folder in file_types:
-        folder_path = os.path.join(directory, folder)
-        if not os.path.exists(folder_path):
-            os.makedirs(folder_path)
+        fs1 = os.path.join(directory, folder)
+        if not os.path.exists(fs1):
+            os.makedirs(fs1)
 
     # Move files to appropriate subdirectories
     for filename in os.listdir(directory):
