@@ -34,15 +34,13 @@ if len(files_in_dir) != 0:
             os.mkdir(path+r"\PGN")
 
 a=0
+list_of_type_files = []
 for j in files_in_dir:
     split_tup = os.path.splitext(files_in_dir[a])
-    # curr_location =os.path.abspath(j)
-    # print(split_tup)
-    # print(curr_location)
-    
-    # if split_tup[1]==types_of_files[1]:
 
-    # print("+")
+    # print(split_tup[1])
+    list_of_type_files.append(split_tup[1])
+   
     
   
     if split_tup[1]==types_of_files[0]:
@@ -51,8 +49,13 @@ for j in files_in_dir:
     if split_tup[1]==types_of_files[0]:
             shutil.move(path + rf"\{j}", path + r"\ZIP")
             print(j)
+    if split_tup[1]==types_of_files[0]:
+            shutil.move(path + rf"\{j}", path + r"\ZIP")
+            print(j)
           
     a+=1
+
+print(list_of_type_files)
 
 
 
