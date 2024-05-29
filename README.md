@@ -8,3 +8,4 @@ types in there dedicated folders.
 3. keeps track of files moved 
 4. abled to revert the files that were moved 
 5. terminal based 
+6. to creat exception for folders not to create based on numbers
