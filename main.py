@@ -2,86 +2,101 @@ import os
 from queue import Full
 import shutil
 
-path = r"C:\Users\user\Music"
+promt = input("Orgainer files(y) or exit with any other key: ")
 
-files_in_dir = os.listdir(path)
+if promt.lower() == 'y':
 
 
-types_of_files = ['.zip','.mp4','.pgn']
+    path = r"C:\Users\user\Music"
 
-empty = []
+    files_in_dir = os.listdir(path)
 
-if len(files_in_dir) != 0:
-    
-    # split_tup = os.path.splitext(files_in_dir[1])
-    # print(split_tup)
+    empty = []
 
-    # if "ZIP"  in files_in_dir:
-    #     print("ZIP folder already exist")
- 
-    # if "MP4" in files_in_dir:
-    #     print("MP4 folder already exist")
-
-    # if "PGN" in files_in_dir:
-    #     print("PGN folder already exist")
-
-    
-    # if "ZIP" not in files_in_dir:
-    #         os.mkdir(path+r"\ZIP")
-    # if "ZIP" not in files_in_dir:
-    #         os.mkdir(path+r"\MP4")
-    # if "PGN" not in files_in_dir:
-    #         os.mkdir(path+r"\PGN")
-
-    a=0
-    list_of_type_files = []
-    for j in files_in_dir:
-        index = len(j)-4
-        length = len(j)
+    if len(files_in_dir) != 0:
         
-        if j[index] == ".":
-            split_tup = os.path.splitext(j)
+        # split_tup = os.path.splitext(files_in_dir[1])
+        # print(split_tup)
 
-            file_1_ext = split_tup[1]
+        # if "ZIP"  in files_in_dir:
+        #     print("ZIP folder already exist")
+    
+        # if "MP4" in files_in_dir:
+        #     print("MP4 folder already exist")
 
-            # print(file_1_ext)
-            list_of_type_files.append(file_1_ext)
+        # if "PGN" in files_in_dir:
+        #     print("PGN folder already exist")
 
+        
+        # if "ZIP" not in files_in_dir:
+        #         os.mkdir(path+r"\ZIP")
+        # if "ZIP" not in files_in_dir:
+        #         os.mkdir(path+r"\MP4")
+        # if "PGN" not in files_in_dir:
+        #         os.mkdir(path+r"\PGN")
+
+        a=0
+        folders_in_dir=[]
+        list_of_type_files = []
+        print(f"no. of files in Directory: {len(files_in_dir)}")
+        for j in files_in_dir:
+            index = len(j)-4
+            length = len(j)
             
+            if j[index] == ".":
+                split_tup = os.path.splitext(j)
 
-            
+                file_1_ext = split_tup[1]
 
-            if file_1_ext not in files_in_dir:
                 # print(file_1_ext)
-                os.mkdir(path+rf"\{file_1_ext}")
-                files_in_dir.append(file_1_ext)
+                list_of_type_files.append(file_1_ext)
+
                 
+
+                
+
+                if file_1_ext not in files_in_dir:
+                    # print(file_1_ext)
+                    os.mkdir(path+rf"\{file_1_ext}")
+                    files_in_dir.append(file_1_ext)
                     
-                    # os.mkdir(path+rf"\{file_1_ext}")
-                    # shutil.move(path + rf"\{j}",path+rf"{split_tup[1]}")
+                        
+                        # os.mkdir(path+rf"\{file_1_ext}")
+                        # shutil.move(path + rf"\{j}",path+rf"{split_tup[1]}")
+                if files_in_dir[a]==len(files_in_dir)-1:
+                    print("files organized")
+                if files_in_dir[a]!=len(files_in_dir)-1:
+
+                    shutil.move(path + rf"\{j}",path+rf"\{file_1_ext}")
+                a+=1
+                print(a)
+                # else:
+                #     print(1)
+                
+
+            else:
+                a+=1
+                print(a)
+                folders_in_dir.append(j)
+                print(folders_in_dir)
+
         
-            shutil.move(path + rf"\{j}",path+rf"\{file_1_ext}")
-            # else:
-            #     print(1)
+
+        print(list_of_type_files)
+        print(folders_in_dir)
+
+
+
+
             
-            a+=1
-        else:
-            print(1)
-       
 
-    print(list_of_type_files)
 
+            
+
+            
 
 
 
-        
-
-
-        
-
-        
-
-
-
-    # print(files_in_dir)
-
+        # print(files_in_dir)
+else: 
+    print("no promt")
