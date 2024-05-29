@@ -36,33 +36,40 @@ if len(files_in_dir) != 0:
     a=0
     list_of_type_files = []
     for j in files_in_dir:
-        if j
-        split_tup = os.path.splitext(j)
-
-        file_1_ext = split_tup[1]
-
-        # print(file_1_ext)
-        list_of_type_files.append(file_1_ext)
-
+        index = len(j)-4
+        length = len(j)
         
+        if j[index] == ".":
+            split_tup = os.path.splitext(j)
 
-        
+            file_1_ext = split_tup[1]
 
-        if file_1_ext not in path:
             # print(file_1_ext)
-            os.mkdir(path+rf"\{file_1_ext}")
-            
-                
-                # os.mkdir(path+rf"\{file_1_ext}")
-                # shutil.move(path + rf"\{j}",path+rf"{split_tup[1]}")
-    
-        shutil.move(path + rf"\{j}",path+rf"\{file_1_ext}")
-        # else:
-        #     print(1)
-        
-        a+=1
+            list_of_type_files.append(file_1_ext)
 
-    # print(list_of_type_files)
+            
+
+            
+
+            if file_1_ext not in files_in_dir:
+                # print(file_1_ext)
+                os.mkdir(path+rf"\{file_1_ext}")
+                files_in_dir.append(file_1_ext)
+                
+                    
+                    # os.mkdir(path+rf"\{file_1_ext}")
+                    # shutil.move(path + rf"\{j}",path+rf"{split_tup[1]}")
+        
+            shutil.move(path + rf"\{j}",path+rf"\{file_1_ext}")
+            # else:
+            #     print(1)
+            
+            a+=1
+        else:
+            print(1)
+       
+
+    print(list_of_type_files)
 
 
 
