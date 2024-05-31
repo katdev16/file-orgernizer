@@ -14,26 +14,6 @@ if promt.lower() == 'y':
     empty = []
 
     if len(files_in_dir) != 0:
-        
-        # split_tup = os.path.splitext(files_in_dir[1])
-        # print(split_tup)
-
-        # if "ZIP"  in files_in_dir:
-        #     print("ZIP folder already exist")
-    
-        # if "MP4" in files_in_dir:
-        #     print("MP4 folder already exist")
-
-        # if "PGN" in files_in_dir:
-        #     print("PGN folder already exist")
-
-        
-        # if "ZIP" not in files_in_dir:
-        #         os.mkdir(path+r"\ZIP")
-        # if "ZIP" not in files_in_dir:
-        #         os.mkdir(path+r"\MP4")
-        # if "PGN" not in files_in_dir:
-        #         os.mkdir(path+r"\PGN")
 
         a=0
         folders_in_dir=[]
@@ -50,10 +30,6 @@ if promt.lower() == 'y':
 
                 # print(file_1_ext)
                 list_of_type_files.append(file_1_ext)
-
-                
-
-                
 
                 if file_1_ext not in files_in_dir:
                     # print(file_1_ext)
