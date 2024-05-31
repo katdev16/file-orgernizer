@@ -10,12 +10,14 @@ if promt.lower() == 'y':
     path = r"C:\Users\user\Music"
 
     files_in_dir = os.listdir(path)
+    print(len(files_in_dir))
 
     empty = []
 
     if len(files_in_dir) != 0:
 
         a=0
+        y=0
         folders_in_dir=[]
         list_of_type_files = []
         print(f"no. of files in Directory: {len(files_in_dir)}")
@@ -30,36 +32,43 @@ if promt.lower() == 'y':
 
                 # print(file_1_ext)
                 list_of_type_files.append(file_1_ext)
+                print(file_1_ext)
+                files_in_dir=os.listdir(path)
+                print(files_in_dir)
 
                 if file_1_ext not in files_in_dir:
+                    list_of_Dirmade= []
                     # print(file_1_ext)
-                    os.mkdir(path+rf"\{file_1_ext}")
+                    Dir_maker = os.mkdir(path+rf"\{file_1_ext}")
+                    y+=1
+                    list_of_Dirmade.append(file_1_ext)
+                    print(list_of_Dirmade)
+
+
                     files_in_dir.append(file_1_ext)
-                    
-                        
-                        # os.mkdir(path+rf"\{file_1_ext}")
-                        # shutil.move(path + rf"\{j}",path+rf"{split_tup[1]}")
-                if files_in_dir[a]==len(files_in_dir)-1:
+                if y==len(folders_in_dir):
                     print("files organized")
-                if files_in_dir[a]!=len(files_in_dir)-1:
+                    break
+                if  y!=len(folders_in_dir):
 
                     shutil.move(path + rf"\{j}",path+rf"\{file_1_ext}")
                 a+=1
-                print(a)
+       
                 # else:
                 #     print(1)
                 
 
             else:
+                y+=1
                 a+=1
-                print(a)
+              
                 folders_in_dir.append(j)
-                print(folders_in_dir)
 
-        
 
+        print(f"y= {y}")
+        print(f"a= {a}")
         print(list_of_type_files)
-        print(folders_in_dir)
+        print(f"folders in dir : {folders_in_dir}")
 
 
 
