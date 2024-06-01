@@ -20,7 +20,7 @@ if promt.lower() == 'y':
         y=0
         folders_in_dir=[]
         list_of_type_files = []
-        print(f"no. of files in Directory: {len(files_in_dir)}")
+        # print(f"no. of files in Directory: {len(files_in_dir)}")
         for j in files_in_dir:
             index = len(j)-4
             length = len(j)
