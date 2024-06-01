@@ -56,8 +56,8 @@ if promt.lower() == 'y':
                 folders_in_dir.append(j)
 
 
-        print(f"y= {y}")
-        print(f"a= {a}")
+        # print(f"y= {y}")
+        # print(f"a= {a}")
         print(f"folders: {folders_in_dir}")
         print(f"{list_of_Dirmade} folder created")
 
