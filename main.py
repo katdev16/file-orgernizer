@@ -32,19 +32,15 @@ if promt.lower() == 'y':
 
                 # print(file_1_ext)
                 list_of_type_files.append(file_1_ext)
-                print(file_1_ext)
+                print(f"{file_1_ext} folder created")
                 files_in_dir=os.listdir(path)
-                print(files_in_dir)
 
                 if file_1_ext not in files_in_dir:
                     list_of_Dirmade= []
-                    # print(file_1_ext)
                     Dir_maker = os.mkdir(path+rf"\{file_1_ext}")
                     y+=1
                     list_of_Dirmade.append(file_1_ext)
-                    print(list_of_Dirmade)
-
-
+                    
                     files_in_dir.append(file_1_ext)
                 if y==len(folders_in_dir):
                     print("files organized")
@@ -53,11 +49,6 @@ if promt.lower() == 'y':
 
                     shutil.move(path + rf"\{j}",path+rf"\{file_1_ext}")
                 a+=1
-       
-                # else:
-                #     print(1)
-                
-
             else:
                 y+=1
                 a+=1
@@ -67,21 +58,8 @@ if promt.lower() == 'y':
 
         print(f"y= {y}")
         print(f"a= {a}")
-        print(list_of_type_files)
-        print(f"folders in dir : {folders_in_dir}")
+        print(f"folders: {folders_in_dir}")
+        print(f"{list_of_Dirmade} folder created")
 
-
-
-
-            
-
-
-            
-
-            
-
-
-
-        # print(files_in_dir)
 else: 
     print("no promt")
