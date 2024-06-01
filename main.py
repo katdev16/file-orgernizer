@@ -32,7 +32,7 @@ if promt.lower() == 'y':
 
                 # print(file_1_ext)
                 list_of_type_files.append(file_1_ext)
-                print(f"{file_1_ext} folder created")
+            
                 files_in_dir=os.listdir(path)
 
                 if file_1_ext not in files_in_dir:
