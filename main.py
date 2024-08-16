@@ -3,7 +3,7 @@ from queue import Full
 import shutil
 
 
-current_directory = ""
+current_directory = os.getcwd()
 
 def create_folder(FolderName):
     global current_directory
@@ -40,7 +40,7 @@ def files_in_folder(folder_path):
         return []
 
 
-print(files_in_folder())
+print(files_in_folder(current_directory))
 
 
 FolderName = input("folder name: ")
