@@ -1,12 +1,9 @@
 
 
-print(files_in_folder(current_directory))
+
+from FileManger import FileManager
 
 
-FolderName = input("folder name: ")
-create_folder(FolderName)
+manager = FileManager()
 
-
-FolderName = input("folder name: ")
-delete_folder(FolderName)
 
