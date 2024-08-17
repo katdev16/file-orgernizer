@@ -2,6 +2,7 @@ import os
 import shutil
 
 class FileManager:
+    
     def __init__(self):
         self.current_directory = os.getcwd()
 
