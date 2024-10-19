@@ -1,11 +1,12 @@
 # file-orgernizer
 
-creating a file organizer that store files of different 
-types in there dedicated folders.
+creating a file organizer using voice speech api from google for voice
+detetion .
 
-1. abled to make folders based on the files in the directory 
+to run program run main.py
+
+1. abled to make folders 
 2. move files to new directory
 3. keeps track of files moved 
-4. abled to revert the files that were moved 
-5. terminal based 
-6. to creat exception for folders not to create based on numbers
+4. abled to create new files
+5. abled to delete
