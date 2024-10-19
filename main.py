@@ -30,9 +30,18 @@ while txt.lower()!="exit":
 
 
 
-    if input[0]=="delete":
+    if input[0]=="delete" and input[1]=="folder":
         print(input)
         manager.delete_folder(input[2])
+
+        mic = Speech()
+        mic.speech_to_text_from_microphone()
+        txt = mic.text
+        input = txt.split(" ")
+
+    if input[0] =="delete" and input[1]=="file":
+        print(input)
+        manager.delete_file(input[2])
 
         mic = Speech()
         mic.speech_to_text_from_microphone()
@@ -53,13 +62,16 @@ while txt.lower()!="exit":
         txt = mic.text
         input = txt.split(" ")
 
-    if input[0].lower()=="new":
+    if input[0].lower() == "new" and input[1].lower() == "file":
+        filename = input[2]  
+        print("recorded message")
         mic = Speech()
         mic.speech_to_text_from_microphone()
-        txt = mic.text
-        manager.new_file(input[2],txt)
+        text = mic.text
+        print(text)
+        manager.new_file(filename, content=text)
 
-        print("file")
+  
 
 
     else:

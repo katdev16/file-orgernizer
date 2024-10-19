@@ -49,12 +49,18 @@ class FileManager:
             print(f"Error: The folder '{folder_path}' does not exist.")
             return []
         
-    def new_file(file_path, content=""):
-
-        with open(file_path, 'w') as file:
-     
+    def new_file(self, file_path, content=""):
+        with open(file_path + ".txt", 'w') as file:
             file.write(content)
-        print(f"File '{file_path}' created successfully.")
+        print(f"File '{file_path}.txt' created successfully.")
+
+    def delete_file(self, file_path):
+      
+        try:
+            os.remove(file_path + ".txt")
+            print(f"File '{file_path}.txt' deleted successfully.")
+        except FileNotFoundError:
+            print(f"Error: The file '{file_path}.txt' does not exist.")
 
 
-
+# FileManager.new_file('example1', 'Hello, this is a test file.')
